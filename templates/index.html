@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot UI</title>
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h2>Code Chatbot</h2>
+    </div>
+
+    
+
+    <div class="chat-box" id="chat-box">
+      <div class="bot-message">Give Instruction and Image</div>
+    </div>
+
+    <div class="chat-input-area">
+      <button class="run-btn" id="run-btn" title="Run code">
+        <img src="https://cdn-icons-png.flaticon.com/512/876/876019.png" alt="Run" class="run-icon" />
+      </button>
+      <button class="download-btn" id="download-btn">⬇️</button>
+      <label for="image-upload" class="image-btn" title="Add image">📷</label>
+      <input type="file" id="image-upload" accept="image/*" hidden />
+
+      <input 
+        type="text" 
+        id="user-input" 
+        placeholder="Type instruction and press Enter..."
+      />
+
+      <button id="send-btn">➤</button>
+    </div>
+
+    <!-- Optional preview of selected image -->
+    <div id="image-preview" class="image-preview" style="display: none;">
+      <img id="preview-img" src="" alt="Preview" />
+      <button id="remove-img">✕</button>
+    </div>
+  </div>
+
+  <!-- <script src="script.js"></script> -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
+
